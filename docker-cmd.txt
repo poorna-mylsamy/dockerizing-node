@@ -1,0 +1,9 @@
+Docker commands
+--------------
+
+docker build -t sample-docker
+
+docker images
+
+docker run -it -p 5000:8080 sample-docker
+
