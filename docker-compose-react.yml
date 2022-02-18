@@ -1,0 +1,24 @@
+version : "3"
+services:   
+  sample-docker:
+    container_name: sample-docker
+    image: sample-docker
+    restart: always
+    build: ./
+    ports:
+    - "5000:5000" 
+  sample-react: 
+    container_name: sample-react
+    image: sample-react    
+    build: ./
+    ports:
+    - "3000:3000"
+    links:
+    - "sample-docker" 
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+    - /tmp/data:/data/ db
+    ports:
+    - "27018:27017"
